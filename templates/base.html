@@ -25,8 +25,8 @@
         <a class="navbar-brand nav-title" href="/">SJMC</a>
         <div class="collapse navbar-collapse">
           <div class="navbar-nav">
-            <a class="nav-link nav-size" href="/melons">All Melons</a>
-            <a class="nav-link nav-size" href="/cart">My Shopping Cart</a>
+            <a class="nav-link nav-size" href="/myteams">Teams</a>
+            <a class="nav-link nav-size" href="/myprojects">Projects</a>
             {% if 'username' in session %}
             <a class="nav-link nav-size" href="/logout">Log Out</a>
             {% else %}
@@ -37,6 +37,6 @@
       </div>
     </nav>
 
-    {% block body %} BODY OF PAGE GOES HERE VIA INHERITANCE {% endblock %}
+    {% block main %} BODY OF PAGE GOES HERE VIA INHERITANCE {% endblock %}
   </body>
 </html>

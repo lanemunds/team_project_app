@@ -27,6 +27,16 @@ def add_team():
         return redirect(url_for("home"))
     else:
         return redirect(url_for("home"))
+    
+@app.route("/myteams")
+def my_teams():
+    return render_template("myteams.html")    
+
+@app.route("/myprojects")
+def my_projects():
+    user = User.query.get(user_id)
+    projects = user.get_all_projects()
+    return render_template("myprojects.html", title = "Projects", page = "projects", projects = projects)  
 
 @app.route("/add-project", methods=["POST"])
 def add_project():
@@ -48,8 +58,7 @@ def add_project():
         return redirect(url_for("home"))
     else:
         return redirect(url_for("home"))
-
-
+       
 if __name__ == "__main__":
     connect_to_db(app)
     app.run(debug = True)
