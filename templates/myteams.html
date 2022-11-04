@@ -1,3 +1,12 @@
-{% extends 'base.html' %} {% block body%}
-<h1>teams</h1>
-{% endblock %}
+{% extends "base.html" %} {% block main %}
+<div>
+  <table class="table table-bordered">
+    <th>Team Name</th>
+    {% for team in teams %}
+    <tr>
+      <td>{{ team.team_name }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endblock %}
+</div>

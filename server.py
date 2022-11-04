@@ -30,7 +30,8 @@ def add_team():
     
 @app.route("/myteams")
 def my_teams():
-    return render_template("myteams.html")    
+    user = User.query.get(user_id)
+    return render_template("myteams.html", title = "Teams", teams = user.teams)    
 
 @app.route("/myprojects")
 def my_projects():
